@@ -9,15 +9,30 @@
 <body>
     <h1>JavaScript Object</h1>
     <p>Objects are also used to store multiple data like arrays but it stores data into its key (that key is also known as a property) while arrays stores data in its index.</p>
+    <p>Now we can use either a single value in object by using its property or key.</p>
+    <p>there are two methods of calling property by variable</p>
+    <p>i.e dot method and bracket method</p>
 
     <script>
         const me = {
            firstName: 'Hamza',
-            lastNAme:'Anwar',
+            lastName:'Anwar',
             age: new Date().getFullYear() - 1998,
             job:'Programmer',
             friends: ["Ali","Ahmad","Amjad"]
         };
+    
+        // Dot Method
+        console.log(`First NAme is ${me.firstName}`);
+        // Bracket Method
+        console.log(`last name is ${me['lastName']}`);
+
+        // Dot VS Bracket
+        let keyName = 'Name';
+        console.log(me['first' + keyName]);
+        console.log(me['last' + keyName]);
+        // where as we cannot add string that is stored in variable with Dot method 
+        console.log(me.first + keyName);    //UndefinedName
     </script>
 </body>
 </html>
