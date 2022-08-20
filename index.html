@@ -33,6 +33,45 @@
         console.log(me['last' + keyName]);
         // where as we cannot add string that is stored in variable with Dot method 
         console.log(me.first + keyName);    //UndefinedName
+
+        // getting value from user interface
+        const intrestedIn = prompt('what you want to know about me? Choose between firstName, last Name, age, job, friends');
+        console.log(`Dot method ${me.intrestedIn}`);       //it will return undefined value
+        console.log(`Bracket method ${me[intrestedIn]}`);       //it will return correct value
+
+        // Hence undefined is a falsy value So, we can use it in conditions
+        if (me[intrestedIn]) {
+            console.log(me[intrestedIn]);
+        }else {
+            console.log(`Wrong Request. Kindly choose the options between firstName, lastName, age, job, friends`);
+        }
+
+        // We can Add more properties and values in it
+        me.location = 'Islamabad';
+        me.github = 'github.com/hamzaanwardev';
+
+        console.log(me);
+
+        // const myfriends = {
+        //     friendz: ["Jalal", "Hamid", "Goshi"],
+        //     bestfriend: myfriends['friendz[0]']
+        // }
+
+        // console.log(myfriends['bestfriend']);
+        console.log(`i have ${me.friends.length} friends and my bestfriend is  ${me.friends[0]}`);
+
+        // function in objectr
+        const aboutMe = {
+           firstName: 'Hamza',
+            lastName:'Anwar',
+            birthYear: 1998,
+            job:'Programmer',
+            friends: ["Ali","Ahmad","Amjad"],
+            calcAge: function () { return new Date().getFullYear() - this.birthYear},
+           // calcAge2: () => new Date().getFullYear() - this.birthYear   //arrow function did not work in object
+        };
+
+        console.log(aboutMe.calcAge());
     </script>
 </body>
 </html>
