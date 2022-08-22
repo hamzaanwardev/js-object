@@ -67,11 +67,11 @@
             birthYear: 1998,
             job:'Programmer',
             friends: ["Ali","Ahmad","Amjad"],
-            calcAge: function () { return new Date().getFullYear() - this.birthYear},
+            calcAge: function () { return new Date().getFullYear() - aboutMe.birthYear},
            // calcAge2: () => new Date().getFullYear() - this.birthYear   //arrow function did not work in object
         };
 
-        console.log(aboutMe.calcAge());
+        console.log(`Age New ${aboutMe.calcAge()}`);
     </script>
 </body>
 </html>
