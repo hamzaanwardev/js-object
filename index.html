@@ -67,11 +67,82 @@
             birthYear: 1998,
             job:'Programmer',
             friends: ["Ali","Ahmad","Amjad"],
+            license : true,
             calcAge: function () { return new Date().getFullYear() - aboutMe.birthYear},
            // calcAge2: () => new Date().getFullYear() - this.birthYear   //arrow function did not work in object
+
+        //    hasLicense : function () {
+        //        if (this.license) {
+        //            return "has driver's license";
+        //        } else {
+        //            return "do not have drivers license."
+        //        }
+        //    },
+
+           getSummary : function () { return `${this.firstName} is a ${this.calcAge()} Years-old ${this.job}. and he has ${this.license ? 'a': 'no'} driver's lisence`}
         };
 
         console.log(`Age New ${aboutMe.calcAge()}`);
+
+        // Challenge
+        console.log(aboutMe.getSummary());
+        // console.log(`${aboutMe.firstName} is a ${aboutMe.calcAge()} Years-old ${aboutMe.job}. and he ${aboutMe.hasLicense()}`);
+
+
+        // Coding Challenge
+        // function Person(fn, ln, weight, tall) {
+        //     this.firstName = fn;
+        //     this.lastName = ln;
+        //     this.fullName = function() {
+        //         return this.firstName + " " + this.lastName;
+        //     };
+        //     this.mass = weight;
+        //     this.height = tall;
+        //     this.BMI = function () {this.mass / (this.tall * this.tall)};
+        // }
+        // const markJason = new Person("Mark","Jason", 78, 1.69);
+        // console.log(markJason.fullName());
+        // console.log(`BMI OF ${'markJason'[fullName]} is ${markJason.BMI()}.`);
+
+
+        // Coding Challenge
+        const markDetails = {
+            fullName: 'Mark Miller',
+            mass: 78,
+            height: 1.69,
+            BMI:  function() {
+                return markDetails.mass / (markDetails.height ** 2);
+            }
+        }
+        const johnDetails = {
+            fullName: "John Smith",
+            mass: 92,
+            height: 1.95,
+            BMI: function() {
+                return johnDetails.mass / (johnDetails.height ** 2);
+            }
+        }
+
+        // function getBmi(mass, height) {
+        //     return mass / (height ** 2);
+        // }
+        
+        // console.log(`${markDetails.fullName} has ${getBmi(markDetails.mass, markDetails.height)}`);
+        // console.log(`${johnDetails.fullName} has ${getBmi(johnDetails.mass, johnDetails.height)}`);
+        console.log(`${markDetails.fullName} has ${markDetails.BMI()}`);
+        console.log(`${johnDetails.fullName} has ${johnDetails.BMI()}`);
+
+        if (markDetails.BMI() > johnDetails.BMI()) {
+            console.log(`${markDetails.fullName}'s BMI (${markDetails.BMI()}) is higher than ${johnDetails.fullName}'s (${johnDetails.BMI()})`)
+        } else {
+            console.log(`${markDetails.fullName}'s BMI (${markDetails.BMI()}) is less than ${johnDetails.fullName}'s (${johnDetails.BMI()})`)
+
+        }
+
+       
+
+        
+
     </script>
 </body>
 </html>
